@@ -59,7 +59,7 @@ public class metodoReg{
         reg temp1[]=new reg[vec.length+1];
         reg temp2[]=new reg[vec.length+1];
         reg vecfusionado[]=new reg[temp1.length+temp2.length];
-        int ind=0;
+        int ind1=0, ind2=0, indf=0;
 
         for(int i=0;i<vec.length;i++)
         {
@@ -78,13 +78,15 @@ public class metodoReg{
             do{
             if(num1<=num2)
             {
-                vecfusionado[ind]=reg1;
-                ind++;
-                reg1=temp1[ind];
+                vecfusionado[indf]=reg1;
+                indf++;
+                ind1++;
+                reg1=temp1[ind1];
             }else{
-                vecfusionado[ind]=reg2;
-                ind++;
-                reg2=temp2[ind];
+                vecfusionado[indf]=reg2;
+                ind2++;
+                indf++;
+                reg2=temp2[ind2];
                 num2=reg2.edad;
             }
             }while(reg1!=null && reg2!=null);
@@ -93,17 +95,19 @@ public class metodoReg{
         if(reg1!=null)
 		{
 			do {
-				vecfusionado[ind]=reg1;
-                reg1=temp1[ind];
-                ind++;
+				vecfusionado[indf]=reg1;
+                reg1=temp1[ind1];
+                ind1++;
+                indf++;
 			}while(reg1!=null);
 		}
 		if(reg2!=null)
 		{
 			do{
-                vecfusionado[ind]=reg2;
-                reg2=temp2[ind];
-                ind++;
+                vecfusionado[indf]=reg2;
+                reg2=temp2[ind2];
+                ind2++;
+                indf++;
              }while(reg2!=null);
 		}
 
