@@ -51,14 +51,14 @@ public class metodoReg{
             reg temp2[]=new reg[vec.length+1];
             reg vecfusionado[]=new reg[temp1.length+temp2.length];
 
-            El mas uno en la longitud de los vectores es para que el ultimo elemento sea un valor nulo y 
+            El mas uno en la longitud de los vectores es para que el ultimo elemento sea un valor nulo y
             funcionen las condiciones de abajo, y no les tire la excepcion.
 
             Ya solo le cambian los valores donde estan los .add por el vector y su indice y ya funciona
         */
         reg temp1[]=new reg[vec.length+1];
         reg temp2[]=new reg[vec.length+1];
-        reg vecfusionado[]=new reg[temp1.length+temp2.length];
+        reg vecfusionado[]=new reg[(temp1.length+temp2.length)-1];
         int ind1=0, ind2=0, indf=0;
 
         for(int i=0;i<vec.length;i++)
@@ -74,7 +74,7 @@ public class metodoReg{
 
         if(reg2!=null)
         {
-            
+
             do{
             if(num1<=num2)
             {
