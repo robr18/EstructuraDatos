@@ -36,7 +36,7 @@ public class indice{
     public indice()
     {
         try{
-        arch=new RandomAccessFile("/src/indice.oto", "rw");
+        arch=new RandomAccessFile("indice.oto", "rw");
         }catch(IOException e){
             System.out.println("Error de apertura");
         }

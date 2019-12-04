@@ -8,7 +8,7 @@ public class Busquedas{
 
     public Busquedas()
     {
-        cves=new long[100];
+        cves=new long[10];
     }
     public void genCves()
     {
@@ -27,7 +27,7 @@ public class Busquedas{
     {
         int pos=0;
 
-        pos=(int)(cve%97);
+        pos=(int)(cve%7);
 
 
         return pos;
@@ -48,7 +48,7 @@ public class Busquedas{
                 arch.grabar(temp);
             }else{
                 //prueba lineal avanzar a la sig posición
-                boolean guardo=false;
+                boolean guardado=false;
                 do{
                 temp.pos++;
                 t=arch.Leer(temp.pos);
@@ -56,21 +56,34 @@ public class Busquedas{
                 {    if(!t.g)
                         {
                             arch.grabar(temp);
-                            guardo=true;
+                            guardado=true;
                         }
                 }else{
                     temp.pos=-1;
 
                 }
-                }while(!guardo);
+                }while(!guardado);
             }
 
         }
     }
 
+    public void unaSolaVez(){
+        indice archt=new indice();
+        molde regt=new molde(0l,0,false);
+        for(int i=0;i<100;i++)
+        {
+            regt.pos=i;
+            archt.grabar(regt);
+        }
+        archt.Cerrar();
+
+    }
+
     public static void main(String[] args) {
         Busquedas obj=new Busquedas();
         obj.genCves();
-        obj.asignarCvesHash();
+        obj.unaSolaVez();
+        //obj.asignarCvesHash();
     }
 }
