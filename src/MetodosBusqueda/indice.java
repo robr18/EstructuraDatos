@@ -81,4 +81,16 @@ public class indice{
             arch.close();
         }catch(IOException e){}
     }
+
+    public void reporte()
+    {
+        int pos=0;
+        molde temp=new molde();
+        do{
+            temp=Leer(pos);
+            if(temp!=null)
+                System.out.println(temp);
+            pos++;
+        }while(temp!=null);
+    }
 }
