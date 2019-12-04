@@ -83,11 +83,11 @@ public class Busquedas{
 
     public static void main(String[] args) {
         Busquedas obj=new Busquedas();
-        obj.genCves();
+        //obj.genCves();
         //obj.unaSolaVez();
-        obj.asignarCvesHash();
-        //indice archt=new indice();
-        //archt.reporte();
-        //archt.Cerrar();
+        //obj.asignarCvesHash();
+        indice archt=new indice();
+        archt.reporte();
+        archt.Cerrar();
     }
 }
