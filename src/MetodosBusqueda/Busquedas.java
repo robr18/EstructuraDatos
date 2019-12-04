@@ -8,7 +8,7 @@ public class Busquedas{
 
     public Busquedas()
     {
-        cves=new long[10];
+        cves=new long[100];
     }
     public void genCves()
     {
@@ -27,7 +27,7 @@ public class Busquedas{
     {
         int pos=0;
 
-        pos=(int)(cve%7);
+        pos=(int)(cve%97);
 
 
         return pos;
@@ -35,6 +35,7 @@ public class Busquedas{
 
     public void asignarCvesHash()
     {
+        int contCol=0;
         indice arch=new indice();
         for(int i=0;i<cves.length;i++)
         {
@@ -51,6 +52,9 @@ public class Busquedas{
                 boolean guardado=false;
                 do{
                 temp.pos++;
+                contCol++;
+                if(temp.pos==cves.length) 
+                    temp.pos=0;
                 t=arch.Leer(temp.pos);
                 if(t!=null)
                 {    if(!t.g)
@@ -58,14 +62,11 @@ public class Busquedas{
                             arch.grabar(temp);
                             guardado=true;
                         }
-                }else{
-                    temp.pos=-1;
-
                 }
                 }while(!guardado);
             }
-
         }
+        System.out.println("Total de colisiones: "+contCol);
     }
 
     public void unaSolaVez(){
@@ -83,7 +84,10 @@ public class Busquedas{
     public static void main(String[] args) {
         Busquedas obj=new Busquedas();
         obj.genCves();
-        obj.unaSolaVez();
-        //obj.asignarCvesHash();
+        //obj.unaSolaVez();
+        obj.asignarCvesHash();
+        //indice archt=new indice();
+        //archt.reporte();
+        //archt.Cerrar();
     }
 }
