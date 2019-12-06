@@ -67,26 +67,35 @@ public class Busquedas{
     {
         int suma=0;
         String cveS=cve+"";
-        String partes[]=new String[(cveS.length()/2)+1];
+        String partes[]=new String[(cveS.length()-1)];
 
         //Dividimos la clave en partes iguales
         for(int i=0,j=0;j<partes.length;i++,j++){
 
             int calcF=i+2;
-            if(calcF<=cveS.length())
+            if(calcF>cveS.length())
+            {
+                partes[j]=cveS.charAt(i-2)+"";
+            }else
                 partes[j]=cveS.substring(i, calcF);
-            else
-                break;
             i++;
         }
 
-        int k=0;
+        //for(int i=0;i<partes.length;i++)
+          //  System.out.print(partes[i]+" ");
+        //System.out.println();
+
+        for(int i=0;i<partes.length;i++)
+        {
+            int num=Integer.parseInt(partes[i]);
+            suma+=num;
+        }
+        /*int k=0;
         do{
             int num=Integer.parseInt(partes[k]);
             suma+=num;
             k++;
-        }while(partes[k]!=null);
-
+        }while(partes[k]!=null);*/
         return suma+"";
     }
 
@@ -147,7 +156,7 @@ public class Busquedas{
         //indice archt=new indice();
         //archt.reporte();
         //archt.Cerrar();
-        System.out.println(obj.sumaPartes(9359));
-        System.out.println(obj.plegamiento(9359));
+        System.out.println(obj.sumaPartes(93594));
+        System.out.println(obj.plegamiento(93594));
 }
 }
