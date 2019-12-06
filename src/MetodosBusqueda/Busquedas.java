@@ -1,7 +1,6 @@
 package MetodosBusqueda;
 
 import java.util.Random;
-import java.util.Vector;
 
 public class Busquedas{
 
@@ -55,53 +54,42 @@ public class Busquedas{
 
     //Metodos de plegamiento
 
-    public void plegamiento(long cve)
+    public int plegamiento(long cve)
     {
-        String digT=cves.length+"";
         int pos=0;
-        
-        
+        String suma=sumaPartes(cve);
+        pos=Integer.parseInt(suma.substring(suma.length()-2));
 
+        return pos;
     }
 
-    public int sumaPartes(long cve)
+    public String sumaPartes(long cve)
     {
         int suma=0;
         String cveS=cve+"";
-        String partes[]=new String[cveS.length()];
+        String partes[]=new String[(cveS.length()-1)];
 
         //Dividimos la clave en partes iguales
         for(int i=0,j=0;i<partes.length;i++,j++){
 
             int calcF=i+2;
-            if(calcF>cveS.length())
+            if(calcF<=cveS.length())
             {
-                partes[j]=cveS.charAt(i)+"";
-            }else
+                //partes[j]=cveS.charAt(i)+"";
                 partes[j]=cveS.substring(i, calcF);
+            }else
+                break;
             i++;
         }
 
-        for(int i=0;i<partes.length;i++)
-        {
-            if(partes[i]!=null)
-            {
-                    int num=Integer.parseInt(partes[i]);
-                    suma+=num;
-            }else{
-                break;
-            }
-        }
+        int k=0;
+        do{
+            int num=Integer.parseInt(partes[k]);
+            suma+=num;
+            k++;
+        }while(partes[k]!=null);
 
-
-        for(int i=0;i<partes.length;i++)
-            {
-                if(partes[i]!=null)
-                    System.out.print(partes[i]+" ");
-            }
-        System.out.println();
-
-        return suma;
+        return suma+"";
     }
 
 
@@ -161,7 +149,7 @@ public class Busquedas{
         //indice archt=new indice();
         //archt.reporte();
         //archt.Cerrar();
-        
-        System.out.println(obj.sumaPartes(725912));
+        System.out.println(obj.sumaPartes(9359));
+        System.out.println(obj.plegamiento(9359));
 }
 }
