@@ -81,10 +81,6 @@ public class Busquedas{
             i++;
         }
 
-        //for(int i=0;i<partes.length;i++)
-          //  System.out.print(partes[i]+" ");
-        //System.out.println();
-
         for(int i=0;i<partes.length;i++)
         {
             if(partes[i]!=null)
@@ -95,15 +91,6 @@ public class Busquedas{
                 break;
             }
         }
-
-
-        for(int i=0;i<partes.length;i++)
-            {
-                if(partes[i]!=null)
-                    System.out.print(partes[i]+" ");
-            }
-        System.out.println();
-
         return suma+"";
     }
 
@@ -164,7 +151,7 @@ public class Busquedas{
         //indice archt=new indice();
         //archt.reporte();
         //archt.Cerrar();
-        
+
         System.out.println(obj.sumaPartes(7259121));
         System.out.println(obj.plegamiento(7259121));
 }
