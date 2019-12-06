@@ -55,20 +55,20 @@ public class Busquedas{
 
     //Metodos de plegamiento
 
-    public void plegamiento(long cve)
+    public int plegamiento(long cve)
     {
-        String digT=cves.length+"";
         int pos=0;
-        
-        
+        String posS=sumaPartes(cve);
+        pos=Integer.parseInt(posS.substring(posS.length()-2));
 
+        return pos;
     }
 
-    public int sumaPartes(long cve)
+    public String sumaPartes(long cve)
     {
         int suma=0;
         String cveS=cve+"";
-        String partes[]=new String[cveS.length()];
+        String partes[]=new String[(cveS.length())];
 
         //Dividimos la clave en partes iguales
         for(int i=0,j=0;i<partes.length;i++,j++){
@@ -101,7 +101,7 @@ public class Busquedas{
             }
         System.out.println();
 
-        return suma;
+        return suma+"";
     }
 
 
@@ -162,6 +162,7 @@ public class Busquedas{
         //archt.reporte();
         //archt.Cerrar();
         
-        System.out.println(obj.sumaPartes(725912));
+        System.out.println(obj.sumaPartes(725912134));
+        System.out.println(obj.plegamiento(725912134));
 }
 }
