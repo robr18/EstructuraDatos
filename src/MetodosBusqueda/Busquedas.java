@@ -33,6 +33,14 @@ public class Busquedas{
         return pos;
     }
 
+    public int cuadratica(long cve)
+    {
+        int pos=0;
+
+        pos=(int)((Math.pow(cve, 2))%97);
+        return pos;
+    }
+
     public void asignarCvesHash()
     {
         int contCol=0;
