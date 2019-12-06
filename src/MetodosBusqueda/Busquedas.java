@@ -67,17 +67,15 @@ public class Busquedas{
     {
         int suma=0;
         String cveS=cve+"";
-        String partes[]=new String[(cveS.length()-1)];
+        String partes[]=new String[(cveS.length()/2)+1];
 
         //Dividimos la clave en partes iguales
-        for(int i=0,j=0;i<partes.length;i++,j++){
+        for(int i=0,j=0;j<partes.length;i++,j++){
 
             int calcF=i+2;
             if(calcF<=cveS.length())
-            {
-                //partes[j]=cveS.charAt(i)+"";
                 partes[j]=cveS.substring(i, calcF);
-            }else
+            else
                 break;
             i++;
         }
