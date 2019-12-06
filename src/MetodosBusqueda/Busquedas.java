@@ -33,12 +33,24 @@ public class Busquedas{
         return pos;
     }
 
+    //Metodos que generan las posiciones de forma cuadratica
+
     public int cuadratica(long cve)
     {
         int pos=0;
 
-        pos=(int)((Math.pow(cve, 2))%97);
+        long numC=(long)Math.pow(cve, 2);
+        //long numC=cve*cve;
+        String posS=digC(numC);
+        pos=Integer.parseInt(posS);
         return pos;
+    }
+
+    public String digC(long cve)
+    {
+        String temp=cve+"";
+        int posc=(temp.length()/2);
+        return temp.substring(posc-1,posc+1);
     }
 
     public void asignarCvesHash()
@@ -94,8 +106,10 @@ public class Busquedas{
         //obj.genCves();
         //obj.unaSolaVez();
         //obj.asignarCvesHash();
-        indice archt=new indice();
-        archt.reporte();
-        archt.Cerrar();
+        //indice archt=new indice();
+        //archt.reporte();
+        //archt.Cerrar();
+        int res=obj.cuadratica(9359);
+        System.out.println(res);
     }
 }
