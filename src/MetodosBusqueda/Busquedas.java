@@ -1,6 +1,7 @@
 package MetodosBusqueda;
 
 import java.util.Random;
+import java.util.Vector;
 
 public class Busquedas{
 
@@ -38,20 +39,71 @@ public class Busquedas{
     public int cuadratica(long cve)
     {
         int pos=0;
-
         long numC=(long)Math.pow(cve, 2);
-        //long numC=cve*cve;
-        String posS=digC(numC);
+        String temp=numC+"";
+        int posc=(temp.length()/2);
+        String posS=digC(numC,posc);
         pos=Integer.parseInt(posS);
         return pos;
     }
 
-    public String digC(long cve)
+    public String digC(long cve,int pos)
     {
         String temp=cve+"";
-        int posc=(temp.length()/2);
-        return temp.substring(posc-1,posc+1);
+        return temp.substring(pos-1,pos+1);
     }
+
+    //Metodos de plegamiento
+
+    public void plegamiento(long cve)
+    {
+        String digT=cves.length+"";
+        int pos=0;
+        
+        
+
+    }
+
+    public int sumaPartes(long cve)
+    {
+        int suma=0;
+        String cveS=cve+"";
+        String partes[]=new String[cveS.length()];
+
+        //Dividimos la clave en partes iguales
+        for(int i=0,j=0;i<partes.length;i++,j++){
+
+            int calcF=i+2;
+            if(calcF>cveS.length())
+            {
+                partes[j]=cveS.charAt(i)+"";
+            }else
+                partes[j]=cveS.substring(i, calcF);
+            i++;
+        }
+
+        for(int i=0;i<partes.length;i++)
+        {
+            if(partes[i]!=null)
+            {
+                    int num=Integer.parseInt(partes[i]);
+                    suma+=num;
+            }else{
+                break;
+            }
+        }
+
+
+        for(int i=0;i<partes.length;i++)
+            {
+                if(partes[i]!=null)
+                    System.out.print(partes[i]+" ");
+            }
+        System.out.println();
+
+        return suma;
+    }
+
 
     public void asignarCvesHash()
     {
@@ -73,7 +125,7 @@ public class Busquedas{
                 do{
                 temp.pos++;
                 contCol++;
-                if(temp.pos==cves.length) 
+                if(temp.pos==cves.length)
                     temp.pos=0;
                 t=arch.Leer(temp.pos);
                 if(t!=null)
@@ -109,7 +161,7 @@ public class Busquedas{
         //indice archt=new indice();
         //archt.reporte();
         //archt.Cerrar();
-        int res=obj.cuadratica(9359);
-        System.out.println(res);
-    }
+        
+        System.out.println(obj.sumaPartes(725912));
+}
 }
