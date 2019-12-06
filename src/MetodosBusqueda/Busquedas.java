@@ -57,8 +57,13 @@ public class Busquedas{
     public int plegamiento(long cve)
     {
         int pos=0;
+<<<<<<< HEAD
         String suma=sumaPartes(cve);
         pos=Integer.parseInt(suma.substring(suma.length()-2));
+=======
+        String posS=sumaPartes(cve);
+        pos=Integer.parseInt(posS.substring(posS.length()-2));
+>>>>>>> experimental
 
         return pos;
     }
@@ -67,7 +72,11 @@ public class Busquedas{
     {
         int suma=0;
         String cveS=cve+"";
+<<<<<<< HEAD
         String partes[]=new String[(cveS.length()-1)];
+=======
+        String partes[]=new String[(cveS.length())];
+>>>>>>> experimental
 
         //Dividimos la clave en partes iguales
         for(int i=0,j=0;j<partes.length;i++,j++){
@@ -90,12 +99,24 @@ public class Busquedas{
             int num=Integer.parseInt(partes[i]);
             suma+=num;
         }
+<<<<<<< HEAD
         /*int k=0;
         do{
             int num=Integer.parseInt(partes[k]);
             suma+=num;
             k++;
         }while(partes[k]!=null);*/
+=======
+
+
+        for(int i=0;i<partes.length;i++)
+            {
+                if(partes[i]!=null)
+                    System.out.print(partes[i]+" ");
+            }
+        System.out.println();
+
+>>>>>>> experimental
         return suma+"";
     }
 
@@ -156,7 +177,13 @@ public class Busquedas{
         //indice archt=new indice();
         //archt.reporte();
         //archt.Cerrar();
+<<<<<<< HEAD
         System.out.println(obj.sumaPartes(93594));
         System.out.println(obj.plegamiento(93594));
+=======
+        
+        System.out.println(obj.sumaPartes(725912134));
+        System.out.println(obj.plegamiento(725912134));
+>>>>>>> experimental
 }
 }
