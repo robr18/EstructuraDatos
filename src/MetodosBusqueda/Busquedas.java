@@ -94,6 +94,27 @@ public class Busquedas{
         return suma+"";
     }
 
+    //Metodo de truncamiento
+
+    public int truncamiento(long cve)
+    {
+        int pos=0;
+
+        //*Generado con digitos impares
+        //!Selecciona los digitos de izq a der por que hay mas variación de los nc
+
+        String cveS=cve+"";
+
+        String vecC[]=new String[3];
+        vecC[0]=cveS.charAt(cveS.length()-1)+"";
+        vecC[1]=cveS.charAt(cveS.length()-3)+"";
+        cveS=vecC[0]+vecC[1];
+        pos=Integer.parseInt(cveS);
+
+        return pos;
+
+    }
+
 
     public void asignarCvesHash()
     {
@@ -148,11 +169,8 @@ public class Busquedas{
         //obj.genCves();
         //obj.unaSolaVez();
         //obj.asignarCvesHash();
-        //indice archt=new indice();
-        //archt.reporte();
-        //archt.Cerrar();
-
-        System.out.println(obj.sumaPartes(7259121));
-        System.out.println(obj.plegamiento(7259121));
+        indice archt=new indice();
+        archt.reporte();
+        archt.Cerrar();
 }
 }
