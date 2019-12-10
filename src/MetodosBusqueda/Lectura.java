@@ -3,9 +3,9 @@ package MetodosBusqueda;
 import java.util.*;
 
 public class Lectura{
-    Scanner sc=new Scanner(System.in);
+    static Scanner sc=new Scanner(System.in);
 
-    public String Cadena(String mens)
+    public static String Cadena(String mens)
     {
         String cad;
         System.out.print(mens);
@@ -13,7 +13,7 @@ public class Lectura{
         return cad;
     }
 
-    public int Entero(String mens)
+    public static int Entero(String mens)
     {
         String cad;
         int x;
@@ -27,7 +27,7 @@ public class Lectura{
         return x;
     }
 
-    public Long EnteroL(String mens)
+    public static Long EnteroL(String mens)
     {
         String cad;
         long x;
@@ -41,7 +41,7 @@ public class Lectura{
         return x;
     }
 
-    public char Caracter(String mens)
+    public static char Caracter(String mens)
     {
         String cad;
         System.out.println(mens);

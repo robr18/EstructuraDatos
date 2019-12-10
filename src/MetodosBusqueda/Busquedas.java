@@ -158,11 +158,19 @@ public class Busquedas{
         //obj.genCves();
         //obj.unaSolaVez();
         //obj.asignarCvesHash();
-        //indice archt=new indice();
-        //archt.reporte();
-        //archt.Cerrar();
-        
-        System.out.println(obj.sumaPartes(725912134));
-        System.out.println(obj.plegamiento(725912134));
+        indice archt=new indice();
+        DatosAlum dA=new DatosAlum();
+        dA.Abrir();
+        regAlumnos regt=new regAlumnos();
+        molde r=new molde();
+        for(int i=0;i<100;i++)
+        {
+            r=archt.Leer(i);
+            regt.cve=r.cve;
+            dA.Grabar(regt,r.pos);
+        }
+
+        archt.Cerrar();
+        dA.Cerrar();
 }
 }

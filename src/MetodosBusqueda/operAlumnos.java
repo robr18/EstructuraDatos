@@ -24,12 +24,16 @@ public class operAlumnos{
             opc=obj.mostrarM();
 
             switch(opc){
-                case 1:
+                case 1: //Pedir los datos del alumno
+                    regAlumnos reg=new regAlumnos();
+                    reg.name=Lectura.Cadena("Dame el nombre del alaumno");
+                    reg.edad=Lectura.Entero("Dame la edad del alumno");
+                    reg.sexo=Lectura.Caracter("Dame el sexo del alumno");
                 
                     break;
 
                 case 2:
-                
+
                     break;
             }
 

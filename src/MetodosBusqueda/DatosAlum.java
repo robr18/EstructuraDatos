@@ -9,7 +9,7 @@ public class DatosAlum{
     public void Abrir()
     {
         try{
-            archA=new RandomAccessFile("Datos.oto", "rw");
+            archA=new RandomAccessFile("Datos.txt", "rw");
         }catch(IOException e){
             System.out.println("Error de Apertura");
         }
@@ -47,6 +47,7 @@ public class DatosAlum{
             regt.name=archA.readUTF();
             regt.edad=archA.readInt();
             regt.sexo=archA.readChar();
+
         }catch(EOFException e){
             return null;
         }
@@ -56,6 +57,5 @@ public class DatosAlum{
 
         return regt;
     }
-
 
 }
