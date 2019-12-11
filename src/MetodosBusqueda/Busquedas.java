@@ -1,7 +1,6 @@
 package MetodosBusqueda;
 
 import java.util.Random;
-import java.util.Vector;
 
 public class Busquedas{
 
@@ -58,8 +57,8 @@ public class Busquedas{
     public int plegamiento(long cve)
     {
         int pos=0;
-        String posS=sumaPartes(cve);
-        pos=Integer.parseInt(posS.substring(posS.length()-2));
+        String suma=sumaPartes(cve);
+        pos=Integer.parseInt(suma.substring(suma.length()-2));
 
         return pos;
     }
@@ -76,7 +75,7 @@ public class Busquedas{
             int calcF=i+2;
             if(calcF>cveS.length())
             {
-                partes[j]=cveS.charAt(i)+"";
+                partes[j]=cveS.charAt(i-2)+"";
             }else
                 partes[j]=cveS.substring(i, calcF);
             i++;
@@ -86,22 +85,34 @@ public class Busquedas{
         {
             if(partes[i]!=null)
             {
-                    int num=Integer.parseInt(partes[i]);
-                    suma+=num;
+                int num=Integer.parseInt(partes[i]);
+                suma+=num;
             }else{
                 break;
             }
         }
-
-
-        for(int i=0;i<partes.length;i++)
-            {
-                if(partes[i]!=null)
-                    System.out.print(partes[i]+" ");
-            }
-        System.out.println();
-
         return suma+"";
+    }
+
+    //Metodo de truncamiento
+
+    public int truncamiento(long cve)
+    {
+        int pos=0;
+
+        //*Generado con digitos impares
+        //!Selecciona los digitos de izq a der por que hay mas variación de los nc
+
+        String cveS=cve+"";
+
+        String vecC[]=new String[3];
+        vecC[0]=cveS.charAt(cveS.length()-1)+"";
+        vecC[1]=cveS.charAt(cveS.length()-3)+"";
+        cveS=vecC[0]+vecC[1];
+        pos=Integer.parseInt(cveS);
+
+        return pos;
+
     }
 
 
@@ -159,6 +170,7 @@ public class Busquedas{
         //obj.unaSolaVez();
         //obj.asignarCvesHash();
         indice archt=new indice();
+<<<<<<< HEAD
         DatosAlum dA=new DatosAlum();
         dA.Abrir();
         regAlumnos regt=new regAlumnos();
@@ -172,5 +184,9 @@ public class Busquedas{
 
         archt.Cerrar();
         dA.Cerrar();
+=======
+        archt.reporte();
+        archt.Cerrar();
+>>>>>>> master
 }
 }
