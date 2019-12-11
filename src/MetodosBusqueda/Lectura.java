@@ -34,7 +34,7 @@ public class Lectura{
         System.out.print(mens);
         cad=sc.nextLine();
         try{
-            x=Integer.parseInt(cad);
+            x=Long.parseLong(cad);
         }catch(NumberFormatException e){
             return EnteroL(mens);
         }

@@ -28,7 +28,7 @@ public class DatosAlum{
     public void Grabar(regAlumnos reg,int pos)
     {
         try{
-            archA.seek(pos);
+            archA.seek(pos*regAlumnos.tam);
             archA.writeLong(reg.cve);
             archA.writeUTF(reg.name);
             archA.writeInt(reg.edad);

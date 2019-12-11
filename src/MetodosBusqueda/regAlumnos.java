@@ -19,4 +19,9 @@ public class regAlumnos{
         edad=e;
         sexo=s;
     }
+
+    public String toString()
+    {
+        return "Contenido del registro\n"+"Clave: "+cve+" Nombre: "+name+" Edad: "+edad+" Sexo: "+sexo;
+    }
 }
