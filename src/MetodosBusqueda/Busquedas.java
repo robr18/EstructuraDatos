@@ -170,7 +170,23 @@ public class Busquedas{
         //obj.unaSolaVez();
         //obj.asignarCvesHash();
         indice archt=new indice();
+<<<<<<< HEAD
+        DatosAlum dA=new DatosAlum();
+        dA.Abrir();
+        regAlumnos regt=new regAlumnos();
+        molde r=new molde();
+        for(int i=0;i<100;i++)
+        {
+            r=archt.Leer(i);
+            regt.cve=r.cve;
+            dA.Grabar(regt,r.pos);
+        }
+
+        archt.Cerrar();
+        dA.Cerrar();
+=======
         archt.reporte();
         archt.Cerrar();
+>>>>>>> master
 }
 }
