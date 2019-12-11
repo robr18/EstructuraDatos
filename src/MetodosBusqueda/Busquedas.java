@@ -170,7 +170,6 @@ public class Busquedas{
         //obj.unaSolaVez();
         //obj.asignarCvesHash();
         indice archt=new indice();
-<<<<<<< HEAD
         DatosAlum dA=new DatosAlum();
         dA.Abrir();
         regAlumnos regt=new regAlumnos();
@@ -184,9 +183,7 @@ public class Busquedas{
 
         archt.Cerrar();
         dA.Cerrar();
-=======
         archt.reporte();
         archt.Cerrar();
->>>>>>> master
 }
 }
